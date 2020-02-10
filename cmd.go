@@ -13,6 +13,9 @@ import (
 )
 
 // Command is a http.HandlerFunc that exec commands by given query string.
+//
+// Usage:
+//    https://github.com/tnclong/http-cmd/blob/master/cmd_test.go
 func Command(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain; charset=utf-8")
 	w.Header().Set("Cache-Control", "no-store, no-cache, must-revalidate, private")
