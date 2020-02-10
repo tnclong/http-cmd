@@ -97,11 +97,11 @@ func ExampleUnallowedCmds() {
 	//
 	// Response:
 	//
-	// name="ps" is unallowed while check env DANGER_EXEC_ALLOWED_CMDS=ls
+	// name="ps" is unallowed while check env DANGER_HTTP_ALLOWED_CMDS=ls
 }
 
 func setenv(value string) {
-	err := os.Setenv("DANGER_EXEC_ALLOWED_CMDS", value)
+	err := os.Setenv("DANGER_HTTP_ALLOWED_CMDS", value)
 	if err != nil {
 		panic(err)
 	}

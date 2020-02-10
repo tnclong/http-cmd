@@ -32,9 +32,9 @@ func Command(w http.ResponseWriter, r *http.Request) {
 		timeout = 10
 	}
 
-	env := os.Getenv("DANGER_EXEC_ALLOWED_CMDS")
+	env := os.Getenv("DANGER_HTTP_ALLOWED_CMDS")
 	if !isAllowedCmds(env, name) && !isAllowedAllCmds(env) {
-		http.Error(w, fmt.Sprintf("name=%q is unallowed while check env DANGER_EXEC_ALLOWED_CMDS=%s", name, env), http.StatusUnprocessableEntity)
+		http.Error(w, fmt.Sprintf("name=%q is unallowed while check env DANGER_HTTP_ALLOWED_CMDS=%s", name, env), http.StatusUnprocessableEntity)
 		return
 	}
 
